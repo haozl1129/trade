@@ -66,10 +66,6 @@
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex';
-import urls from '@/config/url_enum.js';
-import config from '@/config/index.js';
-import cookie from '@/util/cookie.js';
-import validator from '@/util/validator.js';
 const mixin = {
     computed: {
         ...mapState({})

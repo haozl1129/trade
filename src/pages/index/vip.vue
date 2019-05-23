@@ -163,7 +163,6 @@ export default {
     },
     methods: {},
     watch: {
-
         // isLogin(to, from) {
         //         if(to) {
         //         location.href = location.origin + '/' + urls.login

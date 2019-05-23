@@ -1,57 +1,46 @@
 <template>
-  <div class="association-box">
-    <div class="bankbox">
-      <div class="banknumberbox">
-        <div class="bankname">昵称</div>
-        <div class="bankmoney">
-          <div class="banknum">
-            <el-input class placeholder="请输入昵称" size="small" v-model="formData.userName"></el-input>
-          </div>
-        </div>
-      </div>
-      <div class="banknumberbox">
-        <div class="bankname">头像</div>
-        <div class="bankmoney">
-          <el-upload
-            :action="uploadUrl"
-            :data="updData"
-            :on-success="uploadAvatar"
-            :show-file-list="false"
-            class="upload-demo"
-            drag
-            multiple
-            name="file"
-          >
-            <img :src="this.formData.avatar" v-if="this.formData.avatar">
-            <div class="upd-box" v-else>
-              <i class="el-icon-upload"></i>
+    <div class="association-box">
+        <div class="bankbox">
+            <div class="banknumberbox">
+                <div class="bankname">昵称</div>
+                <div class="bankmoney">
+                    <div class="banknum">
+                        <el-input class placeholder="请输入昵称" size="small" v-model="formData.userName"></el-input>
+                    </div>
+                </div>
             </div>
-          </el-upload>
+            <div class="banknumberbox">
+                <div class="bankname">头像</div>
+                <div class="bankmoney">
+                    <el-upload :action="uploadUrl" :data="updData" :on-success="uploadAvatar" :show-file-list="false" class="upload-demo" drag multiple name="file">
+                        <img :src="this.formData.avatar" v-if="this.formData.avatar">
+                        <div class="upd-box" v-else>
+                            <i class="el-icon-upload"></i>
+                        </div>
+                    </el-upload>
+                </div>
+            </div>
+            <div class="banknumberbox">
+                <div class="bankname">邮箱</div>
+                <div class="bankmoney">
+                    <div class="banknum">
+                        <el-input class placeholder="请输入邮箱" size="small" v-model="formData.email"></el-input>
+                    </div>
+                </div>
+            </div>
+            <div class="banknumberbox">
+                <div class="bankname">地址</div>
+                <div class="bankmoney">
+                    <div class="banknum">
+                        <el-input class placeholder="请输入地址" size="small" v-model="formData.address"></el-input>
+                    </div>
+                </div>
+            </div>
+            <div @click="onSubmit" class="withdrawalbtn">提交</div>
         </div>
-      </div>
-      <div class="banknumberbox">
-        <div class="bankname">邮箱</div>
-        <div class="bankmoney">
-          <div class="banknum">
-            <el-input class placeholder="请输入邮箱" size="small" v-model="formData.email"></el-input>
-          </div>
-        </div>
-      </div>
-      <div class="banknumberbox">
-        <div class="bankname">地址</div>
-        <div class="bankmoney">
-          <div class="banknum">
-            <el-input class placeholder="请输入地址" size="small" v-model="formData.address"></el-input>
-          </div>
-        </div>
-      </div>
-      <div @click="onSubmit" class="withdrawalbtn">提交</div>
     </div>
-  </div>
 </template>
 <script>
-import validator from '@/util/validator.js';
-import config from '@/config/index.js';
 import { mapState, mapMutations, mapActions } from 'vuex';
 const mixin = {
     computed: {
@@ -66,8 +55,6 @@ const mixin = {
         })
     }
 };
-const codeUrl = config.serverHost + '/captcha/captchaImage?type=math';
-// (config.serverHost ? '/trade' : '') +
 const uploadUrl = '/common/upload';
 export default {
     mixins: [mixin],
@@ -86,7 +73,7 @@ export default {
         };
     },
     watch: {
-        message(to, from) {
+        message(to) {
             if (to.rows) {
                 const userInfo = to.rows[0].user;
                 this.formData.email = userInfo.email;

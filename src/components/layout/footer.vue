@@ -65,9 +65,8 @@ export default {
             // if (this.pageNmae === 'home') {
             //     this.goPath(home, param);
             // } else {}
-            
-                this.goHref(path, param);
-            
+
+            this.goHref(path, param);
         },
         goPath(path, param) {
             this.$router.push({

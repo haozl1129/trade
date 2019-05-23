@@ -35,8 +35,6 @@
 </template>
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex';
-import detail from './detail.vue';
-import commonMixin from '@/mixin/search.js';
 
 const mixin = {
     computed: {

@@ -155,12 +155,12 @@ export default {
                 ) {
                     this.days = dayDiff + this.formData.adjustDays;
                 }
-                const sDate = utilDate.getYMDW(
-                    new Date(this.formData.issueDate)
-                );
+                // const sDate = utilDate.getYMDW(
+                //     new Date(this.formData.issueDate)
+                // );
                 const eDate = utilDate.getYMDW(new Date(this.formData.dueDate));
-                const issueDate =
-                    sDate.year + '-' + sDate.month + '-' + sDate.day;
+                // const issueDate =
+                //     sDate.year + '-' + sDate.month + '-' + sDate.day;
                 const dueDate =
                     eDate.year + '-' + eDate.month + '-' + eDate.day;
                 // 获取天数

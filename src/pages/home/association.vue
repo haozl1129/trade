@@ -84,7 +84,6 @@ export default {
     },
     computed: {
         isJump() {
-            // console.log('personalBase', this.personalBase);
             if (this.account && this.account.obj) {
                 return false;
             } else {
@@ -101,8 +100,6 @@ export default {
             } else {
                 return {};
             }
-
-            console.log('this.shopEntp', this.shopEntp);
             // if (this.personalBase.obj) {
             //     const data = { ...this.personalBase.obj };
             //     if (this.account && this.account.obj) {

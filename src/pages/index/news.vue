@@ -95,7 +95,7 @@ export default {
     },
 
     watch: {
-        $route(to, from) {
+        $route(to) {
             if (to.query.artcId) {
                 this.isDetail = true;
                 this.getContent({ artcId: to.query.artcId });
@@ -143,7 +143,7 @@ export default {
         text-align: center;
         margin-top: 42px;
         cursor: pointer;
-        i{
+        i {
             font-size: 18px;
         }
     }

@@ -19,7 +19,7 @@ export default {
     },
     mounted() {},
     methods: {
-        onPath(path) {
+        onPath() {
             this.$router.push({
                 path: '/news/newinfo'
             });
